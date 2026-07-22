@@ -1,7 +1,10 @@
 // Arabosfera backend bilan bog'lanish uchun markaziy API qatlami.
 // Barcha sahifalar shu yerdagi funksiyalardan foydalanadi.
 
-const BASE = import.meta.env.VITE_API_BASE ?? 'https://arabosfera.onrender.com';
+// So'rovlar `/api` prefiksi bilan yuboriladi. Vercel (vercel.json) va lokal
+// Vite dev server (vite.config.ts) buni backendga proxy qiladi — shu tufayli
+// brauzerdan CORS muammosi bo'lmaydi (barcha so'rovlar same-origin).
+const BASE = import.meta.env.VITE_API_BASE ?? '/api';
 
 const ACCESS_KEY = 'arabosfera-access-token';
 const REFRESH_KEY = 'arabosfera-refresh-token';
